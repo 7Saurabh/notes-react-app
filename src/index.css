@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #1e1e1e;
 }
 
 body {
@@ -110,7 +110,7 @@ h1 {
 }
 
 .notes-container li{
-  background-color: #1e1e1e;
+  background-color: hsl(0, 0%, 9%);
   /* background-color: #242424; */
   padding: 10px;
 }
@@ -165,7 +165,7 @@ h1 {
   justify-content: center;
   gap: 30px;
   height: 100%;
-  background-color: #1e1e1e;
+  background-color: hsl(0, 0%, 9%);
   padding: 0 20px;
 
   flex-grow: 1;
@@ -270,33 +270,54 @@ h1 {
   transform: translate(-50%, -50%);
   top:70px;
   cursor: pointer;
-  background-color: hsla(0, 0%, 100%,0.5);
+  background-color: hsla(0, 0%, 100%,.1);
   line-height: 15px;
   backdrop-filter: blur(2px);
   color:white;
   padding: 0 10px;
   z-index: 2;
-  border-radius: 5px;
+  border-radius: 30px;
 }
 .changeView svg{
   font-size: 40px;
 }
 @media (max-width: 500px) {
-  .login-container input {
-    width: 100%; /* Set width to 100% when viewport width is below 400px */
-    max-width: none; /* Remove max-width constraint */
-  }
   #root{
     width: 100%;
   }
   .notes-container{
     display: none;
   }
-  .add-note-container, .add-note-container form, .notes-container ol, form{
+  form[name='login'],form[name='signup']{
+    /* height: 100vh; */
     width: 100%;
   }
-  .add-note-container{
+  form[name='login'] .bg-blur,form[name='signup'] .bg-blur{
+    display: none;
+  }
+  .login-container{
+    background-color: black;
+    background-image: linear-gradient(to right, #1e1e1e
+      ,#1e1e1e,#1e1e1e);
+  }
+  .login-container input{
+    background-color: hsl(0, 0%, 6%);
+    color:white;
+   width: 100%;
+  }
+  ::placeholder{
+    color:hsla(0, 0%, 100%,0.5);
+  }
+  .add-note-container, .add-note-container form, .notes-container ol{
+    width: 100%;
+  }
+  .add-note-container form{
     display: flex;
+    background-color: #1e1e1e;
+  }
+  .notes-container li{
+    /* background color of notes-container*/
+    background-color: #1e1e1e ;
   }
   .changeView{
     display: block;
