@@ -8,7 +8,7 @@ function Login(){
 
     const handleSubmit = (e) =>{
         e.preventDefault() // Prevent default form submission
-        fetch('http://127.0.0.1:5000/api/login', {
+        fetch('https://nerch26.pythonanywhere.com/api/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

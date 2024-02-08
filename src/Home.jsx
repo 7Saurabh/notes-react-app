@@ -41,7 +41,7 @@ function Home(){
       const handleSubmit = (e) =>{
         e.preventDefault() // Prevent default form submission
         if(noteInfo.noteTitle !== '' && noteInfo.noteText !== ''){
-          fetch('http://127.0.0.1:5000/api/add-note', {
+          fetch('https://nerch26.pythonanywhere.com/api/add-note', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -72,7 +72,7 @@ function Home(){
     }
 
     const deleteNote = (noteId) =>{
-      fetch('http://127.0.0.1:5000/api/delete-note', {
+      fetch('https://nerch26.pythonanywhere.com/api/delete-note', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -94,7 +94,7 @@ function Home(){
   }
 
     const fetchData = () =>{
-      fetch('http://127.0.0.1:5000/api/home')
+      fetch('https://nerch26.pythonanywhere.com/api/home')
         .then(response => {
           if(response.ok){
             // added return keyword
