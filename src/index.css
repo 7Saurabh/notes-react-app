@@ -1,0 +1,306 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+.login-page-title{
+  z-index: 1;
+}
+
+.login-container{
+  background-color: rgba(0,0,0,0.7);
+  background-image: linear-gradient(to right, rgba(0,0,0,0.7)
+  ,rgba(0,0,0,0.7),rgba(255,255,255,0.3));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  align-items: center;
+
+  height: fit-content;
+  position: relative;
+}
+.login-container .bg-blur{
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  backdrop-filter: blur(100px);
+}
+.login-container input {
+  box-sizing: border-box;
+  max-width: 300px;
+  width: 400px;
+  height: 50px;
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+
+  background-color: #1e1e1e;
+  z-index: 1;
+}
+
+.login-container input[type="submit"]{
+  background-color:hsl(204, 100%, 40%);
+  cursor:pointer;
+  font-size: medium;
+  font-weight: 550;
+  letter-spacing: 0.2px;
+}
+.not-have-account-para{
+  z-index: 1;
+  font-size: small;
+}
+.not-have-account-para .link{
+  cursor:pointer;
+}
+.not-have-account-para .link:hover{
+  color:hsl(204, 100%, 40%);
+  
+}
+.login-container input[type="submit"]:hover{
+  background-color:hsl(204, 100%, 35%);
+}
+
+.error-auth{
+  position: absolute;
+  z-index: 1;
+  top:-10%;
+  padding:5px 10px;
+  background-color: rgba(0,0,0,0.7);
+  background-image: linear-gradient(to right, rgba(0,0,0,0.2)
+  ,rgba(0,0,0,0.2),rgba(255,255,255,0.2));
+  border-radius: 5px;
+  transition: top 0.4s ease;
+  display: flex;
+  justify-content: space-around;
+}
+
+.error-auth .cancel-error{
+  text-align: center;
+  margin-left: 50px;
+  border: 1px solid white;
+  width: 20px;
+  border-radius: 4px;
+  cursor:pointer;
+}
+
+
+.notes-container ol{padding: 0;
+  list-style: none;
+  margin:0;
+}
+
+.notes-container li{
+  background-color: #1e1e1e;
+  /* background-color: #242424; */
+  padding: 10px;
+}
+
+.notes-container .note-title {
+  background-color: hsl(0, 1%, 18%);
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
+}
+.notes-container .note-text{
+  background-color: hsl(0, 1%, 23%);
+  border-radius:  0 0 10px 10px;
+  padding: 10px;
+}
+.note-title{
+  border-bottom: 0.1px solid hsla(0, 0%, 100%,0.6);
+
+  display: flex;
+  justify-content: space-between;
+}
+.note-title .note-delete-btn {
+  height: fit-content;
+  background-color: #1e1e1e;
+  color:hsl(0, 100%, 80%);
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.note-title .note-delete-btn :hover{
+  background-color: hsl(0, 100%, 60%);
+  color: hsl(0, 100%, 90%)
+}
+
+.note-title .note-delete-btn svg{
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 10px;
+  padding:4px 2px;
+}
+#root{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-note-container form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  height: 100%;
+  background-color: #1e1e1e;
+  padding: 0 20px;
+
+  flex-grow: 1;
+}
+.add-note-container input{
+  padding: 10px;
+  height: 30px;
+  box-sizing: content-box;
+  border-radius: 5px;
+  border:0;
+}
+
+.add-note-container input[type="submit"]{
+  background-color: hsl(204, 100%, 40%);
+  font-weight: bold;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.add-note-container input[type="submit"]:hover{
+  background-color: hsl(204, 100%, 35%);
+}
+
+.add-note-container textarea{
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+}
+.notes-container{
+  scroll-behavior: smooth;
+  flex-grow: 2;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+
+::-webkit-scrollbar {
+  width: 5px; /* Set the width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white; /* Color of the scrollbar thumb */
+}
+.home-page{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  height: 90vh;
+}
+
+.add-note-container{
+  position: relative;
+}
+.nav{
+  background-color: hsl(0, 100%, 40%);
+  padding: 7px 10px;
+  width: fit-content;
+  border-radius: 0 12px 12px 0;
+  position: absolute;
+  top:10px;
+  left:1px;
+  text-align: center;
+
+  font-weight: 700;
+  font-size: medium;
+  cursor: pointer;
+}
+.nav .nav-header{
+  /* background-color: hsla(0, 0%, 100%,0.8); */
+  /* color:hsl(0, 100%, 40%); */
+  padding: 2px 10px;
+  border-radius: 0 5px 5px 0;
+  text-align: center;
+}
+.nav .item{
+  /* background-color: hsl(0, 100%, 35%); */
+  border-bottom:0.1px solid hsla(0, 0%, 100%,0.6);
+  padding: 2px 10px;
+  display: none;
+}
+.nav .item:hover{
+  color:hsl(0, 100%, 80%);
+}
+.nav a{
+  color:hsla(0, 0%, 100%,0.9);
+}
+.nav a:hover{
+  color:hsl(0, 100%, 80%);
+}
+.switch-view-container{
+  display: none;
+}
+.changeView{
+  display: none;
+  position:absolute;
+  right:50%;
+  left:50%;
+  width: fit-content;
+  transform: translate(-50%, -50%);
+  top:70px;
+  cursor: pointer;
+  background-color: hsla(0, 0%, 100%,0.5);
+  line-height: 15px;
+  backdrop-filter: blur(2px);
+  color:white;
+  padding: 0 10px;
+  z-index: 2;
+  border-radius: 5px;
+}
+.changeView svg{
+  font-size: 40px;
+}
+@media (max-width: 500px) {
+  .login-container input {
+    width: 100%; /* Set width to 100% when viewport width is below 400px */
+    max-width: none; /* Remove max-width constraint */
+  }
+  #root{
+    width: 100%;
+  }
+  .notes-container{
+    display: none;
+  }
+  .add-note-container, .add-note-container form, .notes-container ol, form{
+    width: 100%;
+  }
+  .add-note-container{
+    display: flex;
+  }
+  .changeView{
+    display: block;
+  }
+  .switch-view-container{
+    display: block;
+  }
+}
+
