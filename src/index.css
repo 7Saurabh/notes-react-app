@@ -126,6 +126,7 @@ h1 {
   padding: 10px;
 }
 .note-title{
+  background-color: hsl(0, 1%, 23%);
   border-bottom: 0.1px solid hsla(0, 0%, 100%,0.6);
 
   display: flex;
