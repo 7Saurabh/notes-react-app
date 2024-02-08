@@ -41,7 +41,7 @@ function Home(){
       const handleSubmit = (e) =>{
         e.preventDefault() // Prevent default form submission
         if(noteInfo.noteTitle !== '' && noteInfo.noteText !== ''){
-          fetch('http://127.0.0.1:5000/api/add-note', {
+          fetch('https://nerch26.pythonanywhere.com/api/add-note', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
