@@ -171,6 +171,7 @@ h1 {
   flex-grow: 1;
 }
 .add-note-container input{
+  background-color: hsl(0, 1%, 23%);
   padding: 10px;
   height: 30px;
   box-sizing: content-box;
@@ -190,6 +191,7 @@ h1 {
 }
 
 .add-note-container textarea{
+  background-color: hsl(0, 1%, 23%);
   padding: 10px;
   border-radius: 5px;
   border: 0;
