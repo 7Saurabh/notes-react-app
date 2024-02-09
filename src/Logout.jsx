@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import React, { useEffect } from 'react'
+import Cookies from 'js-cookie'
 
 function Logout(){
 
@@ -15,6 +16,7 @@ function Logout(){
       })
       .then(response => {
         if (response.ok) {
+            Cookies.remove('session')
             navigate('/login')
           console.log('DLog Out Successful !')
         } else {

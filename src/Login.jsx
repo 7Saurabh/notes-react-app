@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import Cookies from 'js-cookie'
 
 function Login(){
     const navigate = useNavigate()
@@ -18,8 +19,15 @@ function Login(){
         .then(response => {
           if (response.ok) {
             console.log('Data sent successfully')
-            // window.location.href = '/'
-            navigate('/')
+            // Cookies.set('session',loginCreds.username)
+            console.log('username: ',loginCreds.username)
+            response.json().then(data=> {
+                    // username taken from backend
+                    Cookies.set('session',data.username)
+                    console.log(`username = ${data.username}`)
+                })
+                .then(navigate('/'))
+                .catch(console.log('Login Error !'))
           } else {
             // console.log(response)
             // console.error('Failed to send data')

@@ -1,4 +1,4 @@
-
+import Cookies from 'js-cookie'
 import React, { useEffect, useState, useRef } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import DeleteIcon from '@material-ui/icons/DeleteOutlineRounded';
@@ -46,7 +46,7 @@ function Home(){
             headers: {
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify({noteInfo})
+            body: JSON.stringify({noteInfo,'username':Cookies.get('session')})
           })
           .then(response => {
             if (response.ok) {
@@ -77,7 +77,7 @@ function Home(){
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({'note-id':noteId})
+        body: JSON.stringify({'note-id':noteId,'username':Cookies.get('session')})
       })
       .then(response => {
         if (response.ok) {
@@ -94,7 +94,13 @@ function Home(){
   }
 
     const fetchData = () =>{
-      fetch('https://nerch26.pythonanywhere.com/api/home')
+      fetch('https://nerch26.pythonanywhere.com/api/home', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({'username':Cookies.get('session')})
+        })
         .then(response => {
           if(response.ok){
             // added return keyword
@@ -106,6 +112,7 @@ function Home(){
           }
         })
         .then(data => {
+          console.log(data.notes)
           setNotes(data.notes); // Update notes state with new data
           setUsername(data.username)
         })
